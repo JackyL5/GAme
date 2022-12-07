@@ -1,6 +1,5 @@
-import java.io.Serializable;
 
-public class Dealer implements Serializable
+public class Dealer
 {
 
     private Hand hand = new Hand();

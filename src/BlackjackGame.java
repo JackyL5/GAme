@@ -9,7 +9,7 @@ public class BlackjackGame {
     private Deck deck;
     private Dealer dealer = new Dealer();
 
-    // Starts game and displays the rules
+    // Starts game and show rules
     public void initializeGame(){
         String names;
         System.out.println("Welcome to Blackjack!");
@@ -28,11 +28,11 @@ public class BlackjackGame {
 
         // Gets the amount of players and creates them
         do {
-            System.out.print("How many people are playing (1-6)? ");
+            System.out.print("How many people are playing (1-4)? ");
             users = ki.nextInt();
 
 
-        } while (users > 6 || users < 0);
+        } while (users > 4 || users < 0);
 
         players = new Player[users];
         deck = new Deck();
@@ -273,11 +273,11 @@ public class BlackjackGame {
             endAmount = players[i].getBank() - 100;
             if(endAmount > 0)
             {
-                endState = " gain of ";
+                endState = " gain ";
             }
             else if(endAmount < 0)
             {
-                endState = " loss of ";
+                endState = " lost ";
             }
             System.out.println(players[i].getName() + " has ended the game with " + players[i].getBank() + ".");
             if(endState != " no change.")
@@ -290,10 +290,11 @@ public class BlackjackGame {
             }
             System.out.println("");
         }
+        //the end of game
         System.out.println("");
         System.out.println("");
         System.out.println("Thank you for playing!");
     }
 
 
-} //End class
+}

@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Hand implements Serializable
+
+public class Hand
 {
 
     private Card[] theHand = new Card[12];

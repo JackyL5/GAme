@@ -16,7 +16,7 @@ public class InvalidDeckPositionException extends Exception {
 
     public String toString() {
 
-        return ("Attempted to get a card from a position not in Deck" + " " + this.positionIdentifier);
+        return ("card from position not in Deck" + " " + this.positionIdentifier);
     }
 
     public int getPositionValue() {

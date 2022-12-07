@@ -1,13 +1,11 @@
 
-import java.io.Serializable;
-public class Card implements Serializable
+public class Card
 {
 
-    /*Making data "private" is information hiding, so that it cannot be access by
-     *someone else with code outside this class.*/
+
     private char suit;
     private int value;
-
+//default for card
     private Card() {
 
         suit = ' ';
@@ -15,7 +13,7 @@ public class Card implements Serializable
 
 
     }
-
+//makes the 4 suits for the cards
     public Card(char newSuit, int newValue) throws InvalidCardValueException, InvalidCardSuitException {
         if (newValue < 1 || newValue > 13) {
             throw new InvalidCardValueException(newValue);
@@ -31,13 +29,13 @@ public class Card implements Serializable
 
     }
 
-
+//will get number from suit like a king of hearts
     public String toString() {
 
         return getSuitName() + " " + this.value;
 
     }
-
+//labels the cards as one of the 4 suits
     public String getSuitName() {
 
         String suit;
@@ -67,12 +65,12 @@ public class Card implements Serializable
         }
 
         return suit;
-
+//gets the suit
     }
     public char getSuitDesignator() {
 
         return suit;
-
+//gets assign the card name with their values
     }
     public String getValueName(){
 
@@ -127,30 +125,28 @@ public class Card implements Serializable
 
     }
 
-    /*This is encapsulation, it's providing access to the hidden information by
-     *putting it together in one unit with a public method. So, anyone who wants
-     *our data will have to use a setter/getter.*/
+//gets the value of cardd
     public int getValue() {
 
         return this.value;
     }
 
-
+//compares the card suits
     public boolean compareSuit(Card card){
 
         return this.suit == card.getSuitDesignator();
 
     }
-
+//compares the card values
     public boolean compareValue(Card card){
 
         return this.value == card.getValue();
     }
-
+//compares both the card value and suit
     public boolean compareTo(Card card){
 
         return this.suit == card.getSuitDesignator() && this.value == card.getValue();
     }
 
 
-} //End class
+}

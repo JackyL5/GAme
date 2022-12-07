@@ -1,6 +1,6 @@
-import java.io.Serializable;
 
-public class Player implements Serializable
+
+public class Player
 {
 
     private int bank;
@@ -102,4 +102,4 @@ public class Player implements Serializable
         hand.clearHand();
     }
 
-} //End class
+}

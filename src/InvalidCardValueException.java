@@ -1,14 +1,14 @@
 public class InvalidCardValueException extends Exception
 {
     private int valueIdentifier = 0;
-
+// say value no work
     public InvalidCardValueException(int invalidValue) {
 
         valueIdentifier = invalidValue;
 
         System.out.println("Invalid value " + invalidValue);
     }
-
+//say value no work
     private InvalidCardValueException() {
 
 
@@ -18,7 +18,7 @@ public class InvalidCardValueException extends Exception
     public String toString() {
 
 
-        return ("Attempted to create card with invalid suit argument" + " " + this.valueIdentifier);
+        return (" card invalid suit argument" + " " + this.valueIdentifier);
     }
 
     public int getValue() {
@@ -26,4 +26,4 @@ public class InvalidCardValueException extends Exception
         return valueIdentifier;
     }
 
-} //End class
+}

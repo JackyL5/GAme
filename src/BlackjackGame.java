@@ -13,8 +13,7 @@ public class BlackjackGame {
     public void initializeGame(){
         String names;
         System.out.println("Welcome to Blackjack!");
-        System.out.println("");
-        System.out.println("  BLACKJACK RULES: ");
+        System.out.println(" \n BLACKJACK RULES: ");
         System.out.println("	-Each player is dealt 2 cards. The dealer is dealt 2 cards with one face-up and one face-down.");
         System.out.println("	-Cards are equal to their value with face cards being 10 and an Ace being 1 or 11.");
         System.out.println("	-The players cards are added up for their total.");
@@ -27,7 +26,7 @@ public class BlackjackGame {
         System.out.println("");
 
         // Gets the amount of players and creates them
-        do {
+         {
             System.out.print("How many people are playing (1-4)? ");
             users = ki.nextInt();
 
@@ -42,14 +41,15 @@ public class BlackjackGame {
             System.out.print("What is player " + (i + 1) + "'s name? ");
             names = ki.next();
             players[i] = new Player();
-            players[i].setName(names);
-        }
+            if(names.length()>=10){
+            players[i].setName(names.substring(0,5));
+        }else players[i].setName(names);
+    }
     }
 
     // Shuffles the deck
     public void shuffle() throws InvalidDeckPositionException, InvalidCardSuitException, InvalidCardValueException {
         deck.shuffle();
-
     }
 
     // Gets the bets from the players
@@ -58,7 +58,7 @@ public class BlackjackGame {
 
         for (int i =0; i < users; i++) {
             if (players[i].getBank() > 0) {
-                do {
+                 {
                     System.out.print("How much do you want to bet " + players[i].getName()  + (" (1-" + players[i].getBank()) + ")? " );
                     betValue = ki.nextInt();
                     players[i].setBet(betValue);
@@ -113,7 +113,7 @@ public class BlackjackGame {
         }
     }
 
-    // This code takes the user commands to hit or stand
+    //  To hit or stand
     public void hitOrStand() {
         String command;
         char c;

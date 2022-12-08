@@ -125,7 +125,7 @@ public class Card
 
     }
 
-//gets the value of cardd
+//gets the value of card
     public int getValue() {
 
         return this.value;

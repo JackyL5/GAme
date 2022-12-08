@@ -55,4 +55,4 @@ public class Dealer
     public boolean peek() {
         return hand.dealerPeek();
     }
-} //End class
+}
